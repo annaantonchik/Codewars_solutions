@@ -1,4 +1,27 @@
 ''' 
+№18 From A to Z <7 kyu>
+Given a string indicating a range of letters, return a string which includes all the letters in that range, including the last letter. 
+Note that if the range is given in capital letters, return the string in capitals also!
+Notes
+- A hyphen will separate the two letters in the string.
+- You don't need to worry about error handling in this one (i.e. both letters will be the same case and the second letter will always be after the first alphabetically).
+'''
+def gimme_the_letters(sp):
+    res = ''
+    for i in range(ord(sp[0]), ord(sp[2])+1):
+        res += chr(i)
+    return res
+
+
+''' 
+№17 Float Precision <7 kyu>
+Update the solution method to round the argument value to the closest precision of two. The argument will always be a float.
+'''
+def solution(n):
+    return round(n, 2)
+
+
+''' 
 №16 Swapping Cards <7 kyu>
 Two players draw a pair of numbered cards so that both players can form a 2 digit number. A winner can be decided if one player's number is larger than the other.
 However, there is a rule where a player can swap any one of their cards with any one of the other player's cards in a gamble to get a higher number! 
