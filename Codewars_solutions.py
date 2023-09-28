@@ -1,4 +1,30 @@
 ''' 
+№20 How many twos? <7 kyu>
+Write a function that returns the number of '2's in the factorization of a number
+'''
+def two_count(n):
+    from decimal import Decimal
+    counter = 0
+    n = Decimal(n)
+    while Decimal(n % 2) == 0:
+        n = Decimal(n / 2)
+        counter += 1
+    return counter
+
+
+''' 
+№19 Elapsed Seconds <7 kyu>
+Complete the function so that it returns the number of seconds that have elapsed between the start and end times given.
+Tips:
+The start/end times are given as Date (JS/CoffeeScript), DateTime (C#), Time (Nim), datetime(Python) and Time (Ruby) instances.
+The start time will always be before the end time.
+'''
+def elapsed_seconds(start, end):
+    import datetime
+    return (end - start).total_seconds()
+
+
+''' 
 №18 From A to Z <7 kyu>
 Given a string indicating a range of letters, return a string which includes all the letters in that range, including the last letter. 
 Note that if the range is given in capital letters, return the string in capitals also!
