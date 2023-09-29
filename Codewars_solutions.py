@@ -1,4 +1,15 @@
 ''' 
+№21 Product of the main diagonal of a square matrix. <7 kyu>
+Given a list of rows of a square matrix, find the product of the main diagonal.
+'''
+def main_diagonal_product(mat):
+    res = 1
+    for i in range(len(mat)):
+        res *= mat[i][i]
+    return res
+
+
+''' 
 №20 How many twos? <7 kyu>
 Write a function that returns the number of '2's in the factorization of a number
 '''
