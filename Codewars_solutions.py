@@ -1,4 +1,17 @@
 ''' 
+№22 Sum a list but ignore any duplicates <7 kyu>
+Please write a function that sums a list, but ignores any duplicate items in the list.
+For instance, for the list [3, 4, 3, 6] , the function should return 10.
+'''
+def sum_no_duplicates(l):
+    for i in set(l):
+        if l.count(i) > 1:
+            while l.count(i) != 0: 
+                l.pop(l.index(i))
+    return sum(l)
+
+
+''' 
 №21 Product of the main diagonal of a square matrix. <7 kyu>
 Given a list of rows of a square matrix, find the product of the main diagonal.
 '''
