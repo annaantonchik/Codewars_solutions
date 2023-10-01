@@ -1,4 +1,43 @@
 ''' 
+№25 Credit card issuer checking <5 kyu>
+Given a credit card number we can determine who the issuer/vendor is with a few basic knowns.
+Complete the function get_issuer() that will use the values shown below to determine the card issuer for a given card number. 
+If the number cannot be matched then the function should return the string Unknown.
+'''
+def get_issuer(number):
+    variants = {'34':['AMEX', 15], '37':['AMEX', 15], '6011':['Discover', 16], '51':['Mastercard', 16], '52':['Mastercard', 16], '53':['Mastercard', 16], '54':['Mastercard', 16], '55':['Mastercard', 16], '4':['VISA', 13, 16]}
+    for item in variants.keys():
+        if str(number).startswith(item) and len(str(number)) in variants[item]:
+            return variants[item][0]
+    return 'Unknown'
+
+
+''' 
+№24 Break camelCase <6 kyu>
+Complete the solution so that the function will break up camel casing, using a space between words.
+'''
+def solution(s):
+    res = ''
+    for i in s:
+        if i.upper() == i:
+            res = res + ' ' + i
+        else:
+            res += i
+    return res
+
+
+''' 
+№23 Find the missing element between two arrays <7 kyu>
+Given two integer arrays where the second array is a shuffled duplicate of the first array with one element missing, find the missing element.
+Please note, there may be duplicates in the arrays, so checking if a numerical value exists in one and not the other is not a valid solution.
+'''
+def find_missing(arr1, arr2):
+    for i in arr1:
+        if arr1.count(i) > arr2.count(i):
+            return i
+
+
+''' 
 №22 Sum a list but ignore any duplicates <7 kyu>
 Please write a function that sums a list, but ignores any duplicate items in the list.
 For instance, for the list [3, 4, 3, 6] , the function should return 10.
