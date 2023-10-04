@@ -1,5 +1,71 @@
 ''' 
-№25 Credit card issuer checking <5 kyu>
+№28 Find The Parity Outlier <6 kyu>
+You are given an array (which will have a length of at least 3, but could be very large) containing integers. 
+The array is either entirely comprised of odd integers or entirely comprised of even integers except for a single integer N. 
+Write a method that takes the array as an argument and returns this "outlier" N.
+'''
+#first solution
+def find_outlier(integers):
+    count_odd = 0
+    odd = 0
+    count_even = 0
+    even = 0
+    for i in integers:
+        if i % 2 != 0:
+            count_odd += 1
+            odd = i
+        else:
+            count_even += 1
+            even = i
+    if count_odd == 1:
+        return odd
+    if count_even == 1:
+        return even
+
+#another solution
+def find_outlier(integers):
+    odd = [i for i in integers if i % 2 != 0]
+    if len(odd) == 1:
+        return odd[0]
+    return sum(integers) - sum(odd)
+
+
+''' 
+№27 Number of Divisions <7 kyu>
+Calculate how many times a number can be divided by a given number.
+Example
+For example the number 6 can be divided by 2 two times:
+1. 6 / 2 = 3
+2. 3 / 2 = 1 remainder = 1
+'''
+def divisions(n, divisor):
+    counter = 0
+    while n >= divisor:
+        n = n // divisor
+        counter += 1
+    return counter
+
+
+''' 
+№26 Count the smiley faces! <6 kyu>
+Given an array (arr) as an argument complete the function countSmileys that should return the total number of smiling faces.
+Rules for a smiling face:
+- Each smiley face must contain a valid pair of eyes. Eyes can be marked as : or ;
+- A smiley face can have a nose but it does not have to. Valid characters for a nose are - or ~
+- Every smiling face must have a smiling mouth that should be marked with either ) or D
+No additional characters are allowed except for those mentioned.
+'''
+def count_smileys(arr):
+    counter = 0
+    for i in arr:
+        if i[0] in ':;' and i[-1] in ')D':
+                if len(i) == 2 or (len(i) == 3 and i[1] in '-~' ):
+                    counter +=1
+    return counter
+
+
+''' 
+№25 Credit card issuer checking <7 kyu>
 Given a credit card number we can determine who the issuer/vendor is with a few basic knowns.
 Complete the function get_issuer() that will use the values shown below to determine the card issuer for a given card number. 
 If the number cannot be matched then the function should return the string Unknown.
