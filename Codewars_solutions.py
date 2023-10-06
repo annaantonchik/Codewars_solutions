@@ -1,4 +1,14 @@
 ''' 
+№29 Duplicate Arguments <6 kyu>
+Complete the solution so that it returns true if it contains any duplicate argument values. 
+Any number of arguments may be passed into the function.
+The array values passed in will only be strings or numbers. The only valid return values are true and false.
+'''
+def solution(*args):
+    return not (len(list(args)) == len(set(args)))
+
+
+''' 
 №28 Find The Parity Outlier <6 kyu>
 You are given an array (which will have a length of at least 3, but could be very large) containing integers. 
 The array is either entirely comprised of odd integers or entirely comprised of even integers except for a single integer N. 
