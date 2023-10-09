@@ -1,3 +1,27 @@
+'''
+№31 Simple Pig Latin <5 kyu>
+Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
+'''
+def pig_it(text):
+    text = text.split()
+    for i in range(len(text)):
+        if text[i].isalpha():
+            text[i] = text[i][1:] + text[i][0] + 'ay' 
+    return ' '.join(text)
+
+
+'''
+№30 Every possible sum of two digits <7 kyu>
+Given a long number, return all the possible sum of two digits of it.
+'''
+def digits(num):
+    res = []
+    for i in range(len(str(num))):
+        for j in str(num)[i+1:]:
+            res.append(int(str(num)[i]) + int(j))
+    return res
+
+
 ''' 
 №29 Duplicate Arguments <6 kyu>
 Complete the solution so that it returns true if it contains any duplicate argument values. 
