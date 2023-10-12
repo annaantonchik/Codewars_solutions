@@ -1,4 +1,24 @@
 '''
+№32 Simple string indices <6 kyu>
+In this Kata, you will be given a string with brackets and an index of an opening bracket and your task will be to return the index of the matching closing bracket. 
+Both the input and returned index are 0-based except in Fortran where it is 1-based. An opening brace will always have a closing brace. '
+Return -1 if there is no answer (in Haskell, return Nothing; in Fortran, return 0; in Go, return an error).
+Input will consist of letters, numbers and special characters, but no spaces. The only brackets will be ( and ).
+'''
+def solve(st, idx):
+    if st[idx] != '(':
+        return -1
+    counter = 0
+    for i in range(idx, len(st)):
+        if st[i] == '(':
+            counter += 1
+        elif st[i] == ')':
+            counter -= 1
+        if counter == 0:
+            return i
+
+
+'''
 №31 Simple Pig Latin <5 kyu>
 Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
 '''
