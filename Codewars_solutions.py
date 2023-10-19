@@ -1,3 +1,54 @@
+'''№34 Spin Around, Touch the Ground <7 kyu>
+Arguments for the constructor
+radius -> integer or float (do not round it)
+mass -> integer or float (do not round it)
+Methods to be defined
+get_radius()       =>  radius of the Sphere (do not round it)
+get_mass()         =>  mass of the Sphere (do not round it)
+get_volume()       =>  volume of the Sphere (rounded to 5 place after the decimal)
+get_surface_area() =>  surface area of the Sphere (rounded to 5 place after the decimal)
+get_density()      =>  density of the Sphere (rounded to 5 place after the decimal)
+'''
+class Sphere(object):
+    
+    from math import pi
+    
+    pi = pi
+      
+    def __init__(self, radius, mass):
+        self.radius = radius
+        self.mass = mass
+    
+    def get_radius(self):
+        return self.radius
+    
+    def get_mass(self):
+        return self.mass
+    
+    def get_volume(self):
+        return round(4 / 3 * self.pi * self.radius ** 3, 5)
+    
+    def get_surface_area(self):
+        return round(4 * self.pi * self.radius ** 2, 5)
+    
+    def get_density(self):
+        return round(self.mass / self.get_volume(), 5)
+
+
+
+'''№33 Spin Around, Touch the Ground <7 kyu>
+Given a list of directions to spin, "left" or "right", return an integer of how many full 360° rotations were made. Note that each word in the array counts as a 90° rotation in that direction.
+'''
+def spin_around(lst):
+    res = 0
+    for item in lst:
+        if item == 'right':
+            res += 1
+        if item == 'left':
+            res -= 1
+    return abs(res) // 4
+
+
 '''
 №32 Simple string indices <6 kyu>
 In this Kata, you will be given a string with brackets and an index of an opening bracket and your task will be to return the index of the matching closing bracket. 
