@@ -1,3 +1,35 @@
+'''№34 Building blocks <7 kyu>
+The constructor should take an array as an argument, this will contain 3 integers of the form [width, length, height] from which the Block should be created.
+Define these methods:
+`get_width()` return the width of the `Block`
+`get_length()` return the length of the `Block`
+`get_height()` return the height of the `Block`
+`get_volume()` return the volume of the `Block`
+`get_surface_area()` return the surface area of the `Block`
+'''
+class Block:
+    
+    def __init__(self, parameters):
+        self.width, self.length, self.height = parameters
+        self.volume = self.width * self.length * self.height
+        self.surface_area = 2 * (self.width * self.length + self.length * self.height + self.width * self. height)
+        
+    def get_width(self):
+        return self.width
+    
+    def get_length(self):
+        return self.length
+    
+    def get_height(self):
+        return self.height
+    
+    def get_volume(self):
+        return self.volume
+    
+    def get_surface_area(self):
+        return self.surface_area
+
+
 '''№34 Spin Around, Touch the Ground <7 kyu>
 Arguments for the constructor
 radius -> integer or float (do not round it)
@@ -33,7 +65,6 @@ class Sphere(object):
     
     def get_density(self):
         return round(self.mass / self.get_volume(), 5)
-
 
 
 '''№33 Spin Around, Touch the Ground <7 kyu>
