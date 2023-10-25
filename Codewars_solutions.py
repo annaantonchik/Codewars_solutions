@@ -1,3 +1,24 @@
+'''№35 RGB To Hex Conversion <5 kyu>
+The rgb function is incomplete. Complete it so that passing in RGB decimal values will result in a hexadecimal representation being returned. 
+Valid decimal values for RGB are 0 - 255. Any values that fall out of that range must be rounded to the closest valid value.
+Note: Your answer should always be 6 characters long, the shorthand with 3 will not work here.
+'''
+def rgb(r, g, b):
+    if r < 0:
+        r = 0
+    elif r > 255:
+        r = 255
+    if g < 0:
+        g = 0
+    elif g > 255:
+        g = 255
+    if b < 0:
+        b = 0
+    elif b > 255:
+        b = 255
+    return str(hex(r)).upper()[2:].zfill(2) + str(hex(g)).upper()[2:].zfill(2) + str(hex(b)).upper()[2:].zfill(2)
+
+
 '''№34 Building blocks <7 kyu>
 The constructor should take an array as an argument, this will contain 3 integers of the form [width, length, height] from which the Block should be created.
 Define these methods:
