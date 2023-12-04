@@ -1,3 +1,12 @@
+'''№36 Sum of array singles <7 kyu>
+In this Kata, you will be given an array of numbers in which two numbers occur once and the rest occur only twice. 
+Your task will be to return the sum of the numbers that occur only once.
+For example, repeats([4,5,7,5,4,8]) = 15 because only the numbers 7 and 8 occur once, and their sum is 15. Every other number occurs twice.'''
+def repeats(arr):
+    arr_set = set(arr)
+    res = sum([i for i in arr_set if arr.count(i) == 1])
+    return res
+
 '''№35 RGB To Hex Conversion <5 kyu>
 The rgb function is incomplete. Complete it so that passing in RGB decimal values will result in a hexadecimal representation being returned. 
 Valid decimal values for RGB are 0 - 255. Any values that fall out of that range must be rounded to the closest valid value.
