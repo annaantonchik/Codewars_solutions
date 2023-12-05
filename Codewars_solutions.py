@@ -1,3 +1,18 @@
+'''№37 Disemvowel Trolls <7 kyu>
+Trolls are attacking your comment section!
+A common way to deal with this situation is to remove all of the vowels from the trolls' comments, neutralizing the threat.
+Your task is to write a function that takes a string and return a new string with all vowels removed.
+For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
+Note: for this kata y isn't considered a vowel.
+'''
+def disemvowel(string_):
+    letters = 'aeuio'
+    res = ''
+    for i in string_:
+        if i.lower() not in letters:
+            res += i
+    return res
+
 '''№36 Sum of array singles <7 kyu>
 In this Kata, you will be given an array of numbers in which two numbers occur once and the rest occur only twice. 
 Your task will be to return the sum of the numbers that occur only once.
