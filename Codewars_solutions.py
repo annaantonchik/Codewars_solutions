@@ -1,3 +1,16 @@
+'''№38 Small enough? - Beginner <7 kyu>
+You will be given an array and a limit value. You must check that all values in the array are below or equal to the limit value. 
+If they are, return true. Else, return false.
+You can assume all values in the array are numbers.
+'''
+def small_enough(array, limit):
+    res = True
+    for i in array:
+        if i > limit:
+            res = False
+            break
+    return res
+
 '''№37 Disemvowel Trolls <7 kyu>
 Trolls are attacking your comment section!
 A common way to deal with this situation is to remove all of the vowels from the trolls' comments, neutralizing the threat.
