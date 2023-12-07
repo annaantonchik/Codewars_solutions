@@ -1,3 +1,17 @@
+'''№39 Integer depth <6 kyu>
+The depth of an integer n is defined to be how many multiples of n it is necessary to compute before all 10 digits have appeared at least once in some multiple.
+'''
+def compute_depth(n):
+    mask = [i for i in range(10)]
+    res = 0
+    digits = set()
+    while len(digits) != len(mask):
+        res += 1 
+        product = n * res
+        for i in str(product):
+            digits.add(int(i))
+    return res
+
 '''№38 Small enough? - Beginner <7 kyu>
 You will be given an array and a limit value. You must check that all values in the array are below or equal to the limit value. 
 If they are, return true. Else, return false.
