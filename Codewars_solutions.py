@@ -1,3 +1,10 @@
+'''№40 Integer depth <7 kyu>
+Write a function that can return the smallest value of an array or the index of that value. The function's 2nd parameter will tell whether it should return the value or the index.
+Assume the first parameter will always be an array filled with at least 1 number and no duplicates. Assume the second parameter will be a string holding one of two values: 'value' and 'index'.
+'''
+def find_smallest(numbers, to_return):
+    return numbers.index(min(numbers)) if to_return == 'index' else min(numbers)
+
 '''№39 Integer depth <6 kyu>
 The depth of an integer n is defined to be how many multiples of n it is necessary to compute before all 10 digits have appeared at least once in some multiple.
 '''
