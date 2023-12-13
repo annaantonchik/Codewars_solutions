@@ -1,3 +1,22 @@
+'''№42 Sum of integers in string. <7 kyu>
+Your task in this kata is to implement a function that calculates the sum of the integers inside a string. 
+For example, in the string "The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog", the sum of the integers is 3635.
+Note: only positive integers will be tested.
+'''
+def sum_of_integers_in_string(s):
+    lst = []
+    num = ''
+    for i in range(len(s)):
+        if s[i].isdigit():
+            num += s[i]
+        else:
+            if num !='':
+                lst.append(int(num))
+                num = ''
+        if num != '' and i + 1 == len(s):
+            lst.append(int(num))
+    return sum(lst)
+
 '''№41 String to list of integers. <7 kyu>
 Given a string containing a list of integers separated by commas, write the function string_to_int_list(s) that takes said string and returns a new list containing all integers present in the string, preserving the order.
 For example, give the string "-1,2,3,4,5", the function string_to_int_list() should return [-1,2,3,4,5]
