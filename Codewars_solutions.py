@@ -1,3 +1,24 @@
+'''№43 Password generator <6 kyu>
+You need to write a password generator that meets the following criteria:
+6 - 20 characters long
+contains at least one lowercase letter
+contains at least one uppercase letter
+contains at least one number
+contains only alphanumeric characters (no special characters)
+Return the random password as a string.
+Note: "randomness" is checked by counting the characters used in the generated passwords - all characters should have less than 50% occurance. Based on extensive tests, the normal rate is around 35%.
+'''
+def password_gen():
+    import random as r
+    numbers = '1234567890'
+    letters = ''.join([chr(i) for i in range(65, 91)])
+    res = numbers[r.randint(0,9)] + letters[r.randint(0, len(letters) - 1)] + letters.lower()[r.randint(0, len(letters) - 1)] 
+    n = r.randint(3, 17)
+    for i in range(n):
+        char = [numbers[r.randint(0,9)], letters[r.randint(0, len(letters) - 1)], letters.lower()[r.randint(0, len(letters) - 1)]][r.randint(0,2)]
+        res += char
+    return res
+
 '''№42 Sum of integers in string. <7 kyu>
 Your task in this kata is to implement a function that calculates the sum of the integers inside a string. 
 For example, in the string "The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog", the sum of the integers is 3635.
