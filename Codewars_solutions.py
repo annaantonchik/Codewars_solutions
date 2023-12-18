@@ -1,4 +1,21 @@
-'''Good vs Evil <6 kyu>
+'''№45 Who likes it? <6 kyu>
+You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.
+Implement the function which takes an array containing the names of people that like an item. 
+Note: For 4 or more names, the number in "and 2 others" simply increases.
+'''
+def likes(names):
+    if len(names) == 0:
+        return('no one likes this')
+    elif len(names) == 1:
+        return(f'{names[0]} likes this')
+    elif len(names) == 2:
+        return(f'{names[0]} and {names[1]} like this')
+    elif len(names) == 3:
+        return(f'{names[0]}, {names[1]} and {names[2]} like this')
+    else: 
+        return(f'{names[0]}, {names[1]} and {len(names) - 2} others like this')
+
+'''№44 Good vs Evil <6 kyu>
 Middle Earth is about to go to war. The forces of good will have many battles with the forces of evil. 
 Different races will certainly be involved. Each race has a certain worth when battling against others. 
 On the side of good we have the following races, with their associated worth: Hobbits = 1, Men = 2, Elves = 3, Dwarves = 3, Eagles = 4, Wizards = 10
@@ -17,7 +34,7 @@ All values are non-negative integers. The resulting sum of the worth for each si
 Output:
 Return "Battle Result: Good triumphs over Evil" if good wins, "Battle Result: Evil eradicates all trace of Good" if evil wins, or "Battle Result: No victor on this battle field" if it ends in a tie.
 '''
-def good_vs_evil(good: list, evil: list):
+def good_vs_evil(good: str, evil: str):
     good = [int(i) for i in good.split()]
     evil = [int(i) for i in evil.split()]
     good_forse = [1, 2, 3, 3, 4, 10]
