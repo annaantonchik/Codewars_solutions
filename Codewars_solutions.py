@@ -1,3 +1,13 @@
+'''№47 Square Matrix Multiplication <7 kyu>
+Write a function that given, an array arr, returns an array containing at each index i the amount of numbers that are smaller than arr[i] to the right.
+For example:
+* Input [5, 4, 3, 2, 1] => Output [4, 3, 2, 1, 0]
+* Input [1, 2, 0] => Output [1, 1, 0]
+'''
+def smaller(arr: list):
+    res = [sum([arr[i] > arr[j] for j in range(i, len(arr))]) for i in range(len(arr))]
+    return res
+
 '''№46 Square Matrix Multiplication <5 kyu>
 Write a function that accepts two square (NxN) matrices (two dimensional arrays), and returns the product of the two. Only square matrices will be given.
 How to multiply two square matrices:
@@ -6,7 +16,7 @@ Matrix C, the solution, will be equal to the product of A and B. To fill in cell
 More general: To fill in cell [n][m] of matrix C, you need to first multiply the elements in the nth row of matrix A by the elements in the mth column of matrix B, then take the sum of all those products. 
 This will give you the value for cell [m][n] in matrix C.
 '''
-def matrix_mult(a, b):
+def matrix_mult(a: list, b: list):
     res = [[0] * len(a[0]) for _ in range(len(a))]
     for i in range(len(b)):
         for j in range(len(a)):
@@ -19,7 +29,7 @@ You probably know the "like" system from Facebook and other pages. People can "l
 Implement the function which takes an array containing the names of people that like an item. 
 Note: For 4 or more names, the number in "and 2 others" simply increases.
 '''
-def likes(names):
+def likes(names: list):
     if len(names) == 0:
         return('no one likes this')
     elif len(names) == 1:
