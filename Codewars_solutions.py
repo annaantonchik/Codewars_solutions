@@ -1,3 +1,21 @@
+'''№48 Square Matrix Multiplication <6 kyu>
+Create a function that returns the lowest product of 4 consecutive digits in a number given as a string.
+This should only work if the number has 4 digits or more. If not, return "Number is too small".
+lowest_product("123456789") --> 24 (1x2x3x4)
+lowest_product("35") --> "Number is too small"
+'''
+def lowest_product(num: str):
+    if len(num) < 4:
+        return "Number is too small"
+    nums = [int(i) for i in num]
+    res = []
+    for i in range(len(num) - 3):
+        product = 1
+        for j in range(4):
+            product *= nums[i + j]
+        res.append(product)
+    return min(res)
+
 '''№47 Square Matrix Multiplication <7 kyu>
 Write a function that given, an array arr, returns an array containing at each index i the amount of numbers that are smaller than arr[i] to the right.
 For example:
