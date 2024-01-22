@@ -1,3 +1,17 @@
+'''№49 Are all elements equal? (Infinity version) <6 kyu>
+Create a function eq_all that determines if all elements of any iterable are equal; the iterable may be infinite. Return value is a bool.
+Notes.
+For the function result to be True, the iterable must be finite; False, however, can result from an element finitely far from the left end. 
+There will be no tests with infinite series of equal elements.
+Elements will be primitive values.
+'''
+def eq_all(iterable):
+    for check in iterable:
+        for item in iterable:
+            if item != check:
+                return False
+    return True
+
 '''№48 Square Matrix Multiplication <6 kyu>
 Create a function that returns the lowest product of 4 consecutive digits in a number given as a string.
 This should only work if the number has 4 digits or more. If not, return "Number is too small".
