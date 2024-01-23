@@ -1,3 +1,34 @@
+'''№50 Decipher this! <6 kyu>
+You are given a secret message you need to decipher. Here are the things you need to know to decipher it:
+
+For each word:
+the second and the last letter is switched (e.g. Hello becomes Holle)
+the first letter is replaced by its character code (e.g. H becomes 72)
+there are no special characters used, only letters and spaces
+words are separated by a single space
+there are no leading or trailing spaces
+'''
+def decipher_this(s):
+    s = s.split()
+    res = []
+    for word in s:
+        print(len(word))
+        new_word = ''
+        if len(word) == 2 or (len(word) == 3 and word[2].isdigit()):
+            new_word = chr(int(word))
+        elif len(word) == 3:
+            new_word = chr(int(word[0:2])) + word[2]
+        elif len(word) == 4 and word[2].isdigit():
+            new_word = chr(int(word[0:3])) + word[3]
+        elif len(word) == 4:
+            new_word = chr(int(word[0:2])) + word[-1] + word[2]
+        elif len(word) > 4 and word[2].isalpha():
+            new_word = chr(int(word[0:2])) + word[-1] + word[3:-1] + word[2]
+        else:
+            new_word = chr(int(word[0:3])) + word[-1] + word[4:-1] + word[3]
+        res.append(new_word)
+    return " ".join(res)
+
 '''№49 Are all elements equal? (Infinity version) <6 kyu>
 Create a function eq_all that determines if all elements of any iterable are equal; the iterable may be infinite. Return value is a bool.
 Notes.
