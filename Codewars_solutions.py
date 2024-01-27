@@ -1,3 +1,19 @@
+'''№51 Remember <6 kyu>
+Write a function that takes a string and returns an array of the repeated characters (letters, numbers, whitespace) in the string.
+If a charater is repeated more than once, only show it once in the result array.
+Characters should be shown by the order of their first repetition. Note that this may be different from the order of first appearance of the character.
+Characters are case sensitive.
+'''
+def remember(str_: str):
+    seen = set()
+    res = []
+    for simbol in str_:
+        if str_.count(simbol) > 1 and simbol in seen and simbol not in res:
+            res.append(simbol)
+        if str_.count(simbol) > 1 and simbol not in seen:
+            seen.add(simbol)
+    return res
+
 '''№50 Decipher this! <6 kyu>
 You are given a secret message you need to decipher. Here are the things you need to know to decipher it:
 
@@ -8,7 +24,7 @@ there are no special characters used, only letters and spaces
 words are separated by a single space
 there are no leading or trailing spaces
 '''
-def decipher_this(s):
+def decipher_this(s: str):
     s = s.split()
     res = []
     for word in s:
