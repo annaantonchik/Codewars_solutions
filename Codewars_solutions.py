@@ -1,3 +1,24 @@
+'''№52 Scrabble best word <6 kyu>
+You're playing to scrabble. But counting points is hard.
+You decide to create a little script to calculate the best possible value.
+The function takes two arguments :
+1. `points` : an array of integer representing for each letters from A to Z the points that it pays
+2. `words` : an array of strings, uppercase
+You must return the index of the shortest word which realize the highest score.
+If the length and the score are the same for two elements, return the index of the first one.
+'''
+def get_best_word(points, words):
+    max_score = 0
+    best_word_index = 0
+    
+    for i, word in enumerate(words):
+        total_score = sum(points[ord(letter) - ord("A")] for letter in word)
+        if total_score > max_score or (total_score == max_score and len(word) < len(words[best_word_index])):
+            max_score = total_score
+            best_word_index = i
+    
+    return best_word_index
+
 '''№51 Remember <6 kyu>
 Write a function that takes a string and returns an array of the repeated characters (letters, numbers, whitespace) in the string.
 If a charater is repeated more than once, only show it once in the result array.
